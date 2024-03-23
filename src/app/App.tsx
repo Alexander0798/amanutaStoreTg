@@ -1,6 +1,8 @@
 import "./styles/index.scss";
 
 const App = () => {
-    return <div>adskfakdskfadskafsd</div>;
+    console.log(window.Telegram.WebApp)
+    return <div>ds</div>;
 };
+
 export default App;

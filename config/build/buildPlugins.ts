@@ -1,11 +1,11 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack, { WebpackPluginInstance } from "webpack";
-import { BuildOptions } from "./types/config";
+import webpack, {type WebpackPluginInstance} from "webpack";
+import {type BuildOptions} from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 export const buildPlugins = (options: BuildOptions): WebpackPluginInstance[] => {
-    const { paths, isDev, apiUrl, project } = options;
+    const {paths, isDev, apiUrl, project} = options;
     const plugins = [
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({
@@ -27,8 +27,9 @@ export const buildPlugins = (options: BuildOptions): WebpackPluginInstance[] => 
         plugins.push(
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
-            })
+            }),
         );
     }
+
     return plugins;
 };
